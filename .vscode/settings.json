@@ -1,0 +1,29 @@
+{
+	"css.validate": false,
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "on",
+		"strings": true
+	},
+	"files.associations": {
+		"*.rs": "rust"
+	},
+	"workbench.editor.customLabels.patterns": {
+		"**/Cargo.toml": "${dirname} (cargo)",
+		"**/core.*": "${dirname} (core)",
+		"**/layout.*": "${dirname} (layout)",
+		"**/lib.*": "${dirname} (lib)",
+		"**/mod.*": "${dirname} (mod)",
+		"**/page.*": "${dirname} (page)"
+	},
+	"rust-analyzer.server.extraEnv": {
+		"CARGO_FEATURES": "ssr,hydrate"
+	},
+	"rust-analyzer.cargo.features": ["hydrate", "ssr"],
+	"rust-analyzer.check.command": "check",
+	"rust-analyzer.check.extraArgs": ["--features", "hydrate,ssr"],
+	"tailwindCSS.includeLanguages": {
+		"rust": "html",
+		"*.rs": "html"
+	}
+}
