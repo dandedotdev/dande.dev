@@ -1,0 +1,11 @@
+# https://doc.rust-lang.org/cargo/reference/config.html
+
+[net]
+git-fetch-with-cli = true
+
+[resolver]
+incompatible-rust-versions = "fallback"
+
+[target.aarch64-apple-darwin]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
