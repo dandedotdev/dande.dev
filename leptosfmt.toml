@@ -1,0 +1,12 @@
+# https://github.com/bram209/leptosfmt
+
+attr_value_brace_style = "WhenRequired"
+closing_tag_style = "Preserve"
+indentation_style = "Tabs"
+macro_names = ["leptos::view", "view"]
+max_width = 100                         # follow `rustfmt` defaults
+newline_style = "Auto"                  # follow `rustfmt` defaults
+tab_spaces = 4                          # follow `rustfmt` defaults
+
+[attr_values]
+class = "Tailwind"
