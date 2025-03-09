@@ -34,8 +34,7 @@ Thanks to the following projects, which I've used to build this website:
 - [gaucho-labs/tailwind-fuse](https://github.com/gaucho-labs/tailwind-fuse)
 - [igorshubovych/markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 - [leptos-rs/leptos](https://github.com/leptos-rs/leptos)
-- [lint-staged/lint-staged](https://github.com/lint-staged/lint-staged)
-  > or [hyf0/rslint-staged](https://github.com/hyf0/rslint-staged)
+- [lint-staged/lint-staged](https://github.com/lint-staged/lint-staged) or [hyf0/rslint-staged](https://github.com/hyf0/rslint-staged)
 - [markdownlint/markdownlint](https://github.com/markdownlint/markdownlint)
 - [prettier/prettier](https://github.com/prettier/prettier)
 - [rayon-rs/rayon](https://github.com/rayon-rs/rayon)
@@ -45,6 +44,7 @@ Thanks to the following projects, which I've used to build this website:
 - [tamasfe/taplo](https://github.com/tamasfe/taplo)
 - [timlrx/rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
 - [tokio-rs/axum](https://github.com/tokio-rs/axum)
-- [typicode/husky](https://github.com/typicode/husky)
-  > or [rhysd/cargo-husky](https://github.com/rhysd/cargo-husky)
+- [typicode/husky](https://github.com/typicode/husky) or [rhysd/cargo-husky](https://github.com/rhysd/cargo-husky)
 - [twitter/twemoji](https://github.com/twitter/twemoji)
+
+At last, and most importantly, I would like to express my sincere gratitude to my mentors and friends, [dacozai](https://github.com/dacozai), [leonzchang](https://github.com/leonzchang) and [vpochapuis](https://github.com/vpochapuis), who provided invaluable assistance and guidance throughout the development of this project.
