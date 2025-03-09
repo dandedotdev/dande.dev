@@ -1,0 +1,29 @@
+version: '0.2'
+ignorePaths: ['.data', '.gitattributes', '.gitignore', '*.lock', '*-lock.yaml', 'prism.css']
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  [
+    'akesson',
+    'bram209',
+    'carloskiki',
+    'cinnog',
+    'dande',
+    'dandedotdev',
+    'igorshubovych',
+    'itehax',
+    'kenji',
+    'leohuynh',
+    'makezu',
+    'miyazawa',
+    'niklas',
+    'rhysd',
+    'rslint',
+    'Synphonyte',
+    'tamasfe',
+    'taplo',
+    'timlrx',
+    'typicode',
+  ]
+ignoreWords: []
+import: []
