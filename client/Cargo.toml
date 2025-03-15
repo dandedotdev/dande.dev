@@ -1,0 +1,26 @@
+#:schema https://json.schemastore.org/cargo.json
+
+[package]
+edition.workspace = true
+name = "client"
+version.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# ===== Internal ===== #
+app.features = ["hydrate"]
+app.path = "../app"
+# ===== External ===== #
+console_error_panic_hook.workspace = true
+leptos.features = ["hydration", "nightly"]
+leptos.workspace = true
+wasm-bindgen.workspace = true
+
+[features]
+default = ["hydrate"]
+hydrate = []
+
+[lints]
+workspace = true
