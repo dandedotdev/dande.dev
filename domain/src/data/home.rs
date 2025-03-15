@@ -1,0 +1,2 @@
+#[rustfmt::skip]
+pub const HOMEPAGE_INTRO: &str = "<p>Frontend engineer who likes to explore new technologies and create cool things, with a focus on using React, Rust, TypeScript, and Design Patterns to build scalable and maintainable applications.</p><p>Beyond web development, I take great pleasure in tea, coffee, and desserts. I love sharing these sensory experiences with those around me.</p>";

@@ -1,0 +1,14 @@
+#:schema https://json.schemastore.org/cargo.json
+
+[package]
+edition.workspace = true
+name = "domain"
+version.workspace = true
+
+[dependencies]
+# ===== External ===== #
+serde.features = ["derive"]
+serde.workspace = true
+
+[lints]
+workspace = true
