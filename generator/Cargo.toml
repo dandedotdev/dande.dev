@@ -1,0 +1,21 @@
+#:schema https://json.schemastore.org/cargo.json
+
+[package]
+edition.workspace = true
+name = "generator"
+version.workspace = true
+
+[dependencies]
+# ===== Internal ===== #
+domain.path = "../domain"
+# ===== External ===== #
+gray_matter.workspace = true
+pulldown-cmark.features = ["html"]
+pulldown-cmark.workspace = true
+rayon.workspace = true
+regex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true
