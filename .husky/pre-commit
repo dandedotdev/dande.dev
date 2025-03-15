@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "Running cargo clippy..."
-cargo clippy -- -D warnings
+echo "[PRE-COMMIT] Running cargo clippy..."
+cargo clippy --all-targets --no-deps --workspace -- -D warnings
 
-echo "Formatting code..."
+echo "[PRE-COMMIT] Formatting code..."
 npx --no-install lint-staged
