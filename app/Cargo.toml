@@ -1,0 +1,82 @@
+#:schema https://json.schemastore.org/cargo.json
+
+[package]
+edition.workspace = true
+name = "app"
+version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[build-dependencies]
+domain.path = "../domain"
+generator.path = "../generator"
+
+[dependencies]
+# ===== Internal ===== #
+domain.path = "../domain"
+# ===== External ===== #
+axum.optional = true
+axum.workspace = true
+chrono.features = ["serde"]
+chrono.workspace = true
+console_error_panic_hook.optional = true
+console_error_panic_hook.workspace = true
+futures.workspace = true
+gray_matter.workspace = true
+http.optional = true
+http.workspace = true
+icondata.workspace = true
+leptos.features = ["hydration", "nightly"]
+leptos.workspace = true
+leptos-use.workspace = true
+leptos_axum.optional = true
+leptos_axum.workspace = true
+leptos_icons.workspace = true
+leptos_meta.workspace = true
+leptos_router.features = ["nightly"]
+leptos_router.workspace = true
+notify.optional = true
+notify.workspace = true
+pulldown-cmark.features = ["html"]
+pulldown-cmark.workspace = true
+serde.features = ["derive"]
+serde.workspace = true
+serde_json.workspace = true
+tailwind_fuse.features = ["variant"]
+tailwind_fuse.workspace = true
+thiserror.workspace = true
+tokio.features = ["fs", "macros", "rt-multi-thread"]
+tokio.optional = true
+tokio.workspace = true
+tokio-stream.features = ["fs"]
+tokio-stream.optional = true
+tokio-stream.workspace = true
+tower.optional = true
+tower.workspace = true
+tower-http.features = ["compression-br", "fs"]
+tower-http.optional = true
+tower-http.workspace = true
+wasm-bindgen.optional = true
+wasm-bindgen.workspace = true
+web-sys.features = ["HtmlBodyElement", "HtmlElement", "HtmlLinkElement"]
+web-sys.workspace = true
+
+[features]
+hydrate = ["dep:console_error_panic_hook", "dep:wasm-bindgen", "leptos/hydrate"]
+ssr = [
+  "dep:axum",
+  "dep:http",
+  "dep:leptos_axum",
+  "dep:notify",
+  "dep:tokio",
+  "dep:tokio-stream",
+  "dep:tower",
+  "dep:tower-http",
+  "leptos/ssr",
+  "leptos_meta/ssr",
+  "leptos_router/ssr",
+]
+
+[lints]
+workspace = true

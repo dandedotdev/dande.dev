@@ -1,0 +1,199 @@
+/**
+ * FIXME: when leptos supports Tailwind v4 with multi files and `@apply`
+ * https://github.com/tailwindlabs/tailwindcss/discussions/16429
+ */
+/* @reference "../../styles/tailwind.css"; */
+
+/**
+ * CSS Styles for code highlighting.
+ * Feel free to customize token styles
+ * by copying from a prismjs compatible theme:
+ * https://github.com/PrismJS/prism-themes
+ */
+
+/* Code block styles */
+.code-highlight {
+	/*
+		@apply float-left min-w-full;
+	*/
+	float: left;
+	min-width: 100%;
+}
+
+.code-line {
+	/*
+		@apply -mx-4 block border-l-4 border-transparent pl-4 pr-4;
+	*/
+	border-left: 4px var(--tw-border-style)#0000;
+	display: block;
+	margin-inline:calc(var(--spacing)*-4);
+	padding-left: calc(var(--spacing)*4);
+	padding-right: calc(var(--spacing)*4);
+}
+
+.code-line.deleted {
+	/*
+		@apply bg-red-500/20;
+	*/
+	background-color: color-mix(in oklab,var(--color-red-500)20%,transparent);
+}
+
+.code-line.inserted {
+	/*
+		@apply bg-green-500/20;
+	*/
+	background-color: color-mix(in oklab,var(--color-green-500)20%,transparent);
+}
+
+.highlight-line {
+	/*
+		@apply -mx-4 border-l-4 border-primary-500 bg-slate-700/50;
+	*/
+	background-color: color-mix(in oklab,var(--color-slate-700)50%,transparent);
+	border-color: var(--color-primary-500);
+	border-left-width: 4px;
+	border-left-style: var(--tw-border-style);
+	margin-inline:calc(var(--spacing)*-4);
+}
+
+.line-number::before {
+	/*
+		@apply -ml-2 mr-4 inline-block w-4 text-right text-slate-400;
+	*/
+	color: var(--color-slate-400);
+	content: attr(line);
+	display: inline-block;
+	margin-left: calc(var(--spacing)*-2);
+	margin-right: calc(var(--spacing)*4);
+	text-align: right;
+	width: calc(var(--spacing)*4);
+}
+
+/* Code title styles */
+.remark-code-title {
+	/*
+		@apply rounded-t bg-slate-700 px-5 py-3 font-mono text-sm font-bold text-slate-200 dark:bg-slate-800;
+	*/
+	background-color: var(--color-slate-700);
+	border-radius: var(--radius-xs);
+	color: var(--color-slate-200);
+	font-family: var(--font-mono);
+	font-size: var(--text-sm);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--tw-leading,var(--text-sm--line-height));
+	padding-block: calc(var(--spacing)*3);
+	padding-inline:calc(var(--spacing)*5);
+	--tw-font-weight: var(--font-weight-bold);
+}
+
+.remark-code-title:where(.dark,.dark *) {
+	background-color: var(--color-slate-800);
+}
+
+.remark-code-title + div > pre {
+	/*
+		@apply mt-0 rounded-t-none;
+	*/
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	margin-top: calc(var(--spacing)*0);
+}
+
+/* Token styles */
+/**
+ * MIT License
+ * Copyright (c) 2018 Sarah Drasner
+ * Sarah Drasner's[@sdras] Night Owl
+ * Ported by Sara vieria [@SaraVieira]
+ * Added by Souvik Mandal [@SimpleIndian]
+ */
+.namespace {
+	color: rgb(178, 204, 214);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.class-name {
+	color: rgb(255, 203, 139);
+}
+
+.token.attr-name,
+.token.inserted {
+	color: rgb(173, 219, 103);
+	font-style: italic;
+}
+
+.token.bold,
+.token.important {
+	font-weight: bold;
+}
+
+.token.boolean {
+	color: rgb(255, 88, 116);
+}
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+	color: rgb(130, 170, 255);
+}
+
+.token.cdata,
+.token.comment,
+.token.prolog {
+	color: rgb(99, 119, 119);
+	font-style: italic;
+}
+
+.token.deleted {
+	color: rgba(239, 83, 80, 0.56);
+	font-style: italic;
+}
+
+.token.doctype,
+.token.selector {
+	color: rgb(199, 146, 234);
+	font-style: italic;
+}
+
+.token.entity,
+.token.string,
+.language-css .token.string,
+.style .token.string,
+.token.url {
+	color: rgb(173, 219, 103);
+}
+
+.token.important,
+.token.regex,
+.token.variable {
+	color: rgb(214, 222, 235);
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.keyword,
+.token.operator,
+.token.tag {
+	color: rgb(127, 219, 202);
+}
+
+.token.number {
+	color: rgb(247, 140, 108);
+}
+
+.token.punctuation {
+	color: rgb(199, 146, 234);
+}
+
+.token.property,
+.token.symbol {
+	color: rgb(128, 203, 196);
+}
+
+.token.table {
+	display: inline;
+}
