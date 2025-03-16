@@ -94,7 +94,7 @@ checksum = "6b964d184e89d9b6b67dd2715bc8e74cf3107fb2b529990c90cf517326150bf4"
 
 [[package]]
 name = "app"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "axum",
  "chrono",
@@ -368,7 +368,7 @@ dependencies = [
 
 [[package]]
 name = "client"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "app",
  "console_error_panic_hook",
@@ -605,7 +605,7 @@ dependencies = [
 
 [[package]]
 name = "domain"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde",
 ]
@@ -802,7 +802,7 @@ dependencies = [
 
 [[package]]
 name = "generator"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "domain",
  "gray_matter",
