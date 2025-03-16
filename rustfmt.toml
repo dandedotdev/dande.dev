@@ -1,8 +1,8 @@
+#:schema https://json.schemastore.org/rustfmt.json
 # https://rust-lang.github.io/rustfmt
 
 edition = "2024"
 
-binop_separator = "Back"
 combine_control_expr = false
 condense_wildcard_suffixes = true
 error_on_line_overflow = true
@@ -11,13 +11,12 @@ fn_params_layout = "Vertical"
 force_multiline_blocks = true
 format_code_in_doc_comments = true
 format_macro_matchers = true
-# format_strings = true
 group_imports = "StdExternalCrate"
 hex_literal_case = "Upper"
 imports_granularity = "Crate"
 match_arm_blocks = false
 match_block_trailing_comma = true
-newline_style = "Auto"
+newline_style = "Unix"
 normalize_comments = true
 normalize_doc_attributes = true
 reorder_impl_items = true
