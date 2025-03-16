@@ -2,7 +2,7 @@
 // - encapsulate these server_functions
 // - make them generic
 // - use `build.rs` here to generate rust code to get rid of `Suspense` of the
-//   frontend
+//   front end
 
 pub mod add_default_language;
 pub mod add_gfm_code_title;

@@ -12,7 +12,7 @@ I genuinely enjoy Rust's programming philosophy and wanted to incorporate it as 
 
 I spent about a week experimenting with both Leptos and [Dioxus](https://github.com/DioxusLabs/dioxus), and found that Leptos' JSX-like syntax was easier for me to use. That's why I ultimately chose Leptos.
 
-> I also recommended using Dioxus for the frontend. A lot of people are contributing to its ecosystem.
+> I also recommended using Dioxus for the front end. A lot of people are contributing to its ecosystem.
 
 ## Acknowledgements
 

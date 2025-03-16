@@ -2,7 +2,7 @@ use domain::data::SITE_METADATA;
 use icondata as i;
 use leptos::prelude::*;
 use leptos_icons::Icon;
-use leptos_meta::Title;
+use leptos_meta::{Meta, Title};
 use leptos_router::components::A;
 
 use crate::{components::ui::Tag, server_functions::list_posts, utils::format_post_date};
@@ -20,6 +20,12 @@ pub fn BlogPage() -> impl IntoView {
 
     #[rustfmt::skip]
     view! {
+		<Meta name="description" content=format!("Blog | {}", SITE_METADATA.title) />
+		<Meta property="og:title" content=format!("Blog | {}", SITE_METADATA.title) />
+		<Meta property="og:type" content="website" />
+		<Meta property="og:url" content=format!("{}/blog", SITE_METADATA.site_url) />
+		<Meta name="twitter:description" content=format!("Blog | {}", SITE_METADATA.title) />
+		<Meta name="twitter:title" content=format!("Blog | {}", SITE_METADATA.title) />
 		<Title text=format!("Blog | {}", SITE_METADATA.title) />
 
 		<div class="px-4 mx-auto max-w-4xl sm:px-6 xl:px-0">
