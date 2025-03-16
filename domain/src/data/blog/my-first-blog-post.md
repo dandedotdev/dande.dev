@@ -3,7 +3,7 @@ date: 2025-03-15 15:12:47
 description: "This is the first blog post I've written. I want to document some of my findings and thoughts here."
 draft: false
 last_modified: 2025-03-15 15:12:47
-tags: ['essay', 'leptos', 'rust']
+tags: ['leptos', 'rust', 'web']
 title: 'My First Blog Post'
 ---
 
@@ -19,7 +19,7 @@ I genuinely enjoy Rust's programming philosophy and wanted to incorporate it as 
 
 I spent about a week experimenting with both Leptos and [Dioxus](https://github.com/DioxusLabs/dioxus), and found that Leptos' JSX-like syntax was easier for me to use. That's why I ultimately chose Leptos.
 
-> I also recommended using Dioxus for the frontend. A lot of people are contributing to its ecosystem.
+> I also recommended using Dioxus for the front end. A lot of people are contributing to its ecosystem.
 
 ## Acknowledgements
 
