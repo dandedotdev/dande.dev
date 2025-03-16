@@ -2,7 +2,7 @@ use domain::{data::SITE_METADATA, types::About};
 use leptos::prelude::*;
 use leptos_meta::{Meta, Title};
 
-use crate::components::ui::{Icon, IconKind, IconSize};
+use crate::components::ui::{SocialIcon, SocialIconKind, SocialIconSize};
 
 #[component]
 pub fn AboutLayout(about: About) -> impl IntoView {
@@ -46,24 +46,24 @@ pub fn AboutLayout(about: About) -> impl IntoView {
 									</div>
 								</div>
 								<div class="flex gap-4">
-									<Icon
-										kind=IconKind::Email
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Email
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.mail_to
 									/>
-									<Icon
-										kind=IconKind::Github
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Github
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.github_url
 									/>
-									<Icon
-										kind=IconKind::Linkedin
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Linkedin
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.linkedin_url
 									/>
-									<Icon
-										kind=IconKind::Twitter
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Twitter
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.twitter_url
 									/>
 								</div>
