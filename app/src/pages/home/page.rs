@@ -20,8 +20,13 @@ pub fn HomePage() -> impl IntoView {
 
     #[rustfmt::skip]
     view! {
-		<Title text=SITE_METADATA.title />
 		<Meta name="description" content=SITE_METADATA.description />
+		<Meta property="og:title" content=SITE_METADATA.title />
+		<Meta property="og:type" content="website" />
+		<Meta property="og:url" content=SITE_METADATA.site_url />
+		<Meta name="twitter:description" content=SITE_METADATA.description />
+		<Meta name="twitter:title" content=SITE_METADATA.title />
+		<Title text=SITE_METADATA.title />
 
 		<div class="flex flex-col gap-x-12 my-6 lg:flex-row lg:mb-12">
 			<div class="flex flex-col justify-start items-start space-y-6 md:flex-row md:justify-center md:items-center md:mt-24 md:space-x-6 md:divide-y-0">

@@ -45,26 +45,41 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 
 #[component]
 pub fn App() -> impl IntoView {
+    use domain::data::SITE_METADATA;
+
     provide_meta_context();
 
     let fallback = || view! { "Page not found." }.into_view();
 
     #[rustfmt::skip]
     view! {
-		<Meta name="color-scheme" content="dark light" />
-		<Meta name="theme-color" attr:media="(prefers-color-scheme: light)" content="#fff" />
-		<Meta name="theme-color" attr:media="(prefers-color-scheme: dark)" content="#000" />
 		<Link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
 		<Link rel="icon" type_="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
 		<Link rel="icon" type_="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 		<Link rel="manifest" href="/favicons/site.webmanifest" />
 		<Link rel="shortcut icon" type_="image/x-icon" href="/favicons/favicon.ico" />
-		// Google Fonts: Inter
 		// <Link rel="preconnect" href="https://fonts.googleapis.com" />
 		// <Link rel="preconnect" href="https://fonts.gstatic.com" attr:crossorigin="anonymous" />
 		// <Link rel="preload" as_="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
-		// <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" on:load=move |ev| { event_target::<HtmlLinkElement>(&ev).set_media("all");} />
+		<Link rel="author" href=SITE_METADATA.github_url />
+		<Meta name="author" content=SITE_METADATA.author />
+		<Meta name="color-scheme" content="dark light" />
+		<Meta name="theme-color" attr:media="(prefers-color-scheme: light)" content="#fff" />
+		<Meta name="theme-color" attr:media="(prefers-color-scheme: dark)" content="#000" />
+		<Meta property="og:description" content=SITE_METADATA.description />
+		<Meta
+			property="og:image"
+			content=format!("{}{}", SITE_METADATA.site_url, SITE_METADATA.opengraph_image)
+		/>
+		<Meta property="og:locale" content=SITE_METADATA.locale />
+		<Meta property="og:site_name" content=SITE_METADATA.title />
+		<Meta name="twitter:card" content="summary_large_image" />
+		<Meta
+			name="twitter:image"
+			content=format!("{}{}", SITE_METADATA.site_url, SITE_METADATA.opengraph_image)
+		/>
 		<Stylesheet id="leptos" href="/pkg/dande_dev.css" />
+		// <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" on:load=move |ev| { event_target::<HtmlLinkElement>(&ev).set_media("all");} />
 
 		<AppLayout>
 			<Router>

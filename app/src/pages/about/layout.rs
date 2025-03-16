@@ -1,6 +1,6 @@
 use domain::{data::SITE_METADATA, types::About};
 use leptos::prelude::*;
-use leptos_meta::Title;
+use leptos_meta::{Meta, Title};
 
 use crate::components::ui::{Icon, IconKind, IconSize};
 
@@ -9,6 +9,12 @@ pub fn AboutLayout(about: About) -> impl IntoView {
     #[rustfmt::skip]
     view! {
 		<>
+			<Meta name="description" content=SITE_METADATA.description />
+			<Meta property="og:title" content=format!("About | {}", SITE_METADATA.title) />
+			<Meta property="og:type" content="website" />
+			<Meta property="og:url" content=format!("{}/about", SITE_METADATA.site_url) />
+			<Meta name="twitter:description" content=SITE_METADATA.description />
+			<Meta name="twitter:title" content=format!("About | {}", SITE_METADATA.title) />
 			<Title text=format!("About | {}", SITE_METADATA.title) />
 
 			<div class="px-4 mx-auto max-w-4xl sm:px-6 xl:px-0">
