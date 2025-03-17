@@ -34,7 +34,7 @@ pub fn HomePage() -> impl IntoView {
 					<h1 class="text-3xl font-bold sm:text-4xl text-slate-900 dark:text-slate-100">
 						{SITE_METADATA.author}
 					</h1>
-					<p class="mr-2 w-96 text-sm tracking-wider uppercase text-primary-500">
+					<p class="mr-2 text-sm tracking-wider uppercase md:w-96 text-primary-500">
 						{SITE_METADATA.description}
 					</p>
 				</div>
