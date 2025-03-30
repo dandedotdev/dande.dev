@@ -26,11 +26,13 @@ pub fn AboutLayout(about: About) -> impl IntoView {
 					</div>
 					<div class="grid gap-12 pt-4 md:grid-cols-7">
 						<div class="flex flex-row gap-8 items-start md:flex-col md:col-span-2">
-							<img
-								alt="avatar"
-								class="overflow-hidden rounded-lg bg-slate-100 w-[150px] lg:w-[200px] dark:bg-slate-800"
-								src=about.metadata.avatar_image.to_string()
-							/>
+							<div class="overflow-hidden rounded-lg bg-slate-100 w-[150px] lg:w-[200px] dark:bg-slate-800">
+								<img
+									alt="avatar"
+									class="object-cover size-full"
+									src=about.metadata.avatar_image.to_string()
+								/>
+							</div>
 							<div class="space-y-4">
 								<div class="space-y-2">
 									<h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100">
