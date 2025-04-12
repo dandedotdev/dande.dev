@@ -71,7 +71,6 @@ pub fn MobileNav() -> impl IntoView {
 												attr:class="mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-slate-900 outline-0 hover:text-primary-500 dark:text-slate-100 dark:hover:text-primary-400"
 												href=link.href
 												on:click=delayed_toggle_nav
-												target="_self"
 											>
 												{link.label}
 											</A>

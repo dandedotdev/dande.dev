@@ -72,7 +72,6 @@ pub fn HomePage() -> impl IntoView {
 														<A
 															attr:class="break-words"
 															href=format!("/blog/{}", post.slug)
-															target="_self"
 														>
 															{title}
 														</A>
@@ -100,7 +99,6 @@ pub fn HomePage() -> impl IntoView {
 												attr:aria-label=format!("Read {}", post.title)
 												attr:class="inline-flex items-center text-sm transition-colors text-slate-600 group dark:text-slate-400 dark:hover:text-slate-100 hover:text-slate-900"
 												href=format!("/blog/{}", post.slug)
-												target="_self"
 											>
 												"Read article"
 												<Icon

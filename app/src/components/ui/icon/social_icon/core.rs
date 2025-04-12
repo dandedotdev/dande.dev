@@ -47,7 +47,7 @@ pub fn SocialIcon(
     });
 
     view! {
-        <A href=href target="_self">
+        <A href=href>
             <span class="sr-only">{format!("{kind:?}")}</span>
             {move || match kind {
                 SocialIconKind::Email => view! { <EmailIcon attr:class=class /> }.into_any(),

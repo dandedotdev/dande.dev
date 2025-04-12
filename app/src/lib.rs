@@ -24,10 +24,12 @@ use crate::{
 };
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
+    use domain::data::SITE_METADATA;
+
     #[rustfmt::skip]
     view! {
 		<!DOCTYPE html>
-		<html lang="en" class="scroll-smooth dark" style="color-scheme: dark">
+		<html lang="en" class="scroll-smooth">
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,6 +37,44 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 				// https://github.com/leptos-rs/leptos/discussions/3039#discussioncomment-10783691
 				<HydrationScripts options />
 				<MetaTags />
+				<Link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/favicons/apple-touch-icon.png"
+				/>
+				<Link
+					rel="icon"
+					type_="image/png"
+					sizes="32x32"
+					href="/favicons/favicon-32x32.png"
+				/>
+				<Link
+					rel="icon"
+					type_="image/png"
+					sizes="16x16"
+					href="/favicons/favicon-16x16.png"
+				/>
+				<Link rel="manifest" href="/favicons/site.webmanifest" />
+				<Link rel="shortcut icon" type_="image/x-icon" href="/favicons/favicon.ico" />
+				<Link rel="canonical" href=SITE_METADATA.site_url />
+				<Link rel="author" href=SITE_METADATA.github_url />
+				<Meta name="author" content=SITE_METADATA.author />
+				<Stylesheet id="leptos" href="/pkg/dande_dev.css" />
+				// Block parsing, set up default localstorage and initialize the theme
+				<script>
+					(function() {
+					                   if (!window.localStorage.getItem("theme")) {
+					                       window.localStorage.setItem("theme", "dark");
+					                   }
+					                   if (window.localStorage.getItem("theme") === "light") {
+					                       document.querySelector("html").classList.remove("dark");
+					                       document.querySelector("html").style.colorScheme = "light";
+					                   } else {
+					                       document.querySelector("html").classList.add("dark");
+					                       document.querySelector("html").style.colorScheme = "dark";
+					                   }
+					})();
+				</script>
 			</head>
 			<body class="antialiased text-black bg-white dark:text-white pl-[calc(100vw-100%)] dark:bg-slate-950">
 				<App />
@@ -53,16 +93,9 @@ pub fn App() -> impl IntoView {
 
     #[rustfmt::skip]
     view! {
-		<Link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-		<Link rel="icon" type_="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-		<Link rel="icon" type_="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-		<Link rel="manifest" href="/favicons/site.webmanifest" />
-		<Link rel="shortcut icon" type_="image/x-icon" href="/favicons/favicon.ico" />
 		// <Link rel="preconnect" href="https://fonts.googleapis.com" />
 		// <Link rel="preconnect" href="https://fonts.gstatic.com" attr:crossorigin="anonymous" />
 		// <Link rel="preload" as_="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
-		<Link rel="author" href=SITE_METADATA.github_url />
-		<Meta name="author" content=SITE_METADATA.author />
 		<Meta name="color-scheme" content="dark light" />
 		<Meta name="theme-color" attr:media="(prefers-color-scheme: light)" content="#fff" />
 		<Meta name="theme-color" attr:media="(prefers-color-scheme: dark)" content="#000" />
@@ -78,7 +111,6 @@ pub fn App() -> impl IntoView {
 			name="twitter:image"
 			content=format!("{}{}", SITE_METADATA.site_url, SITE_METADATA.opengraph_image)
 		/>
-		<Stylesheet id="leptos" href="/pkg/dande_dev.css" />
 		// <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" on:load=move |ev| { event_target::<HtmlLinkElement>(&ev).set_media("all");} />
 
 		<AppLayout>

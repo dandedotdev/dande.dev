@@ -36,9 +36,7 @@ pub fn Footer() -> impl IntoView {
                 <div>{" • "}</div>
                 <div>{format!("© {}", Utc::now().year())}</div>
                 <div>{" • "}</div>
-                <A href="/" target="_self">
-                    {SITE_METADATA.title}
-                </A>
+                <A href="/">{SITE_METADATA.title}</A>
             </div>
         </footer>
     }
