@@ -34,7 +34,7 @@ pub fn HomePage() -> impl IntoView {
 					<h1 class="text-3xl font-bold sm:text-4xl text-slate-900 dark:text-slate-100">
 						{SITE_METADATA.author}
 					</h1>
-					<p class="mr-2 w-96 text-sm tracking-wider uppercase text-primary-500">
+					<p class="mr-2 text-sm tracking-wider uppercase md:w-96 text-primary-500">
 						{SITE_METADATA.description}
 					</p>
 				</div>
@@ -72,7 +72,6 @@ pub fn HomePage() -> impl IntoView {
 														<A
 															attr:class="break-words"
 															href=format!("/blog/{}", post.slug)
-															target="_self"
 														>
 															{title}
 														</A>
@@ -100,7 +99,6 @@ pub fn HomePage() -> impl IntoView {
 												attr:aria-label=format!("Read {}", post.title)
 												attr:class="inline-flex items-center text-sm transition-colors text-slate-600 group dark:text-slate-400 dark:hover:text-slate-100 hover:text-slate-900"
 												href=format!("/blog/{}", post.slug)
-												target="_self"
 											>
 												"Read article"
 												<Icon

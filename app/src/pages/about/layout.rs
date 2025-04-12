@@ -2,7 +2,7 @@ use domain::{data::SITE_METADATA, types::About};
 use leptos::prelude::*;
 use leptos_meta::{Meta, Title};
 
-use crate::components::ui::{Icon, IconKind, IconSize};
+use crate::components::ui::{SocialIcon, SocialIconKind, SocialIconSize};
 
 #[component]
 pub fn AboutLayout(about: About) -> impl IntoView {
@@ -26,11 +26,13 @@ pub fn AboutLayout(about: About) -> impl IntoView {
 					</div>
 					<div class="grid gap-12 pt-4 md:grid-cols-7">
 						<div class="flex flex-row gap-8 items-start md:flex-col md:col-span-2">
-							<img
-								alt="avatar"
-								class="overflow-hidden rounded-lg bg-slate-100 w-[150px] lg:w-[200px] dark:bg-slate-800"
-								src=about.metadata.avatar_image.to_string()
-							/>
+							<div class="overflow-hidden rounded-lg bg-slate-100 w-[150px] lg:w-[200px] dark:bg-slate-800">
+								<img
+									alt="avatar"
+									class="object-cover size-full"
+									src=about.metadata.avatar_image.to_string()
+								/>
+							</div>
 							<div class="space-y-4">
 								<div class="space-y-2">
 									<h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100">
@@ -46,24 +48,24 @@ pub fn AboutLayout(about: About) -> impl IntoView {
 									</div>
 								</div>
 								<div class="flex gap-4">
-									<Icon
-										kind=IconKind::Email
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Email
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.mail_to
 									/>
-									<Icon
-										kind=IconKind::Github
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Github
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.github_url
 									/>
-									<Icon
-										kind=IconKind::Linkedin
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Linkedin
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.linkedin_url
 									/>
-									<Icon
-										kind=IconKind::Twitter
-										size=IconSize::Sm
+									<SocialIcon
+										kind=SocialIconKind::Twitter
+										size=SocialIconSize::Sm
 										href=SITE_METADATA.twitter_url
 									/>
 								</div>

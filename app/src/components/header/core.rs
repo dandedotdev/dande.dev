@@ -9,12 +9,7 @@ pub fn Header() -> impl IntoView {
     #[rustfmt::skip]
     view! {
 		<header class="flex sticky top-0 z-50 justify-between items-center py-10 w-full bg-white dark:bg-slate-950">
-			<A
-				attr:aria_label=SITE_METADATA.header_title
-				attr:class="break-words"
-				href="/"
-				target="_self"
-			>
+			<A attr:aria_label=SITE_METADATA.header_title attr:class="break-words" href="/">
 				<div class="flex justify-between items-center">
 					<div class="mr-3">
 						<Logo />
@@ -34,7 +29,6 @@ pub fn Header() -> impl IntoView {
 								<A
 									attr:class="block font-medium text-slate-900 dark:text-slate-100 dark:hover:text-primary-400 hover:text-primary-500"
 									href=link.href
-									target="_self"
 								>
 									{link.label}
 								</A>

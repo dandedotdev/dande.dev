@@ -1,5 +1,8 @@
 # https://doc.rust-lang.org/cargo/reference/config.html
 
+# [build]
+# rustflags = ["-Z", "threads=8"]
+
 [net]
 git-fetch-with-cli = true
 

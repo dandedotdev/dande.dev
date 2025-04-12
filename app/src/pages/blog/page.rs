@@ -57,9 +57,7 @@ pub fn BlogPage() -> impl IntoView {
 																<time datetime=post
 																	.date>{format_post_date(&post.date)}</time>
 																<h2 class="text-2xl font-semibold text-slate-900 dark:text-slate-100">
-																	<A href=format!("/blog/{}", post.slug) target="_self">
-																		{title}
-																	</A>
+																	<A href=format!("/blog/{}", post.slug)>{title}</A>
 																</h2>
 																<div class="flex flex-wrap gap-2">
 																	<For
@@ -85,7 +83,6 @@ pub fn BlogPage() -> impl IntoView {
 															attr:aria-label=format!("Read {}", post.title)
 															attr:class="inline-flex items-center text-sm transition-colors text-slate-600 group dark:text-slate-400 dark:hover:text-slate-100 hover:text-slate-900"
 															href=format!("/blog/{}", post.slug)
-															target="_self"
 														>
 															"Read article"
 															<Icon

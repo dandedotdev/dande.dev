@@ -1,9 +1,7 @@
-pub mod core;
-
-pub mod icon_kind;
+pub mod moon_icon;
 pub mod social_icon;
+pub mod sun_icon;
 
-pub use core::*;
-
-pub use icon_kind::*;
+pub use moon_icon::*;
 pub use social_icon::*;
+pub use sun_icon::*;
