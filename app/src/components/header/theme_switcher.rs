@@ -103,13 +103,22 @@ pub fn ThemeSwitcher() -> impl IntoView {
 					>
 						{move || {
 							match theme.get() {
-								Theme::Dark => view! { <MoonIcon /> }.into_any(),
-								Theme::Light => view! { <SunIcon /> }.into_any(),
 								Theme::Unknown => {
 									view! {
 										<span class="block invisible text-0 size-6">
 											"Theme Unknown"
 										</span>
+									}
+										.into_any()
+								}
+								_ => {
+									view! {
+										<Show
+											when=move || matches!(theme.get(), Theme::Light)
+											fallback=move || view! { <MoonIcon /> }
+										>
+											<SunIcon />
+										</Show>
 									}
 										.into_any()
 								}
