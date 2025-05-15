@@ -56,7 +56,6 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 				/>
 				<Link rel="manifest" href="/favicons/site.webmanifest" />
 				<Link rel="shortcut icon" type_="image/x-icon" href="/favicons/favicon.ico" />
-				<Link rel="canonical" href=SITE_METADATA.site_url />
 				<Link rel="author" href=SITE_METADATA.github_url />
 				<Meta name="author" content=SITE_METADATA.author />
 				<Stylesheet id="leptos" href="/pkg/dande_dev.css" />
@@ -111,6 +110,7 @@ pub fn App() -> impl IntoView {
 			name="twitter:image"
 			content=format!("{}{}", SITE_METADATA.site_url, SITE_METADATA.opengraph_image)
 		/>
+		<Link rel="canonical" href=SITE_METADATA.site_url />
 		// <Link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="print" on:load=move |ev| { event_target::<HtmlLinkElement>(&ev).set_media("all");} />
 
 		<AppLayout>
