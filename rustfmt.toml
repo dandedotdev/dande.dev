@@ -1,4 +1,4 @@
-#:schema https://json.schemastore.org/rustfmt.json
+#:schema https://www.schemastore.org/rustfmt.json
 # https://rust-lang.github.io/rustfmt
 
 edition = "2024"

@@ -1,4 +1,4 @@
-#:schema https://json.schemastore.org/rust-toolchain.json
+#:schema https://www.schemastore.org/rust-toolchain.json
 
 [toolchain]
 channel = "nightly"
