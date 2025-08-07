@@ -38,14 +38,17 @@ where
 
     let matter = Matter::<YAML>::new();
     let about_data = matter
-        .parse_with_struct::<AboutFrontMatter>(&content)
+        .parse::<AboutFrontMatter>(&content)
         .expect("Failed to parse md frontmatter");
     let parser = Parser::new_ext(&about_data.content, options);
     let mut html_output = String::new();
 
     html::push_html(&mut html_output, parser);
 
-    let about = About::new(html_output, AboutMetadata::new(about_data.data));
+    let about = About::new(
+        html_output,
+        AboutMetadata::new(about_data.data.expect("Failed to parse frontmatter data")),
+    );
 
     let json_content =
         serde_json::to_string_pretty(&about).expect("Failed to serialize about to JSON");
