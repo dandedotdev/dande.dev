@@ -11,7 +11,7 @@
     "rehype-parse": "^9.0.1",
     "rehype-prism-plus": "2.0.1",
     "rehype-stringify": "^10.0.1",
-    "tailwindcss": "4.1.10",
+    "tailwindcss": "4.1.11",
     "unified": "^11.0.5"
   },
   "devDependencies": {
