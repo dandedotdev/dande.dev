@@ -14,6 +14,12 @@ I spent about a week experimenting with both Leptos and [Dioxus](https://github.
 
 > I also recommended using Dioxus for the front end. A lot of people are contributing to its ecosystem.
 
+## Lighthouse Score
+
+I'd like to express my sincere gratitude to [gbj](https://github.com/gbj) for his guidance and maintenance of Leptos, a framework that demonstrates exceptional performance.
+
+![Lighthouse Score](/images/lighthouse-score.png)
+
 ## Acknowledgements
 
 This blog template is highly inspired by [itehax/rust-blog](https://github.com/itehax/rust-blog) and [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
