@@ -60,7 +60,7 @@ pub fn MobileNav() -> impl IntoView {
 			<Show when=is_shown fallback=|| ()>
 				<Portal mount=document().body().unwrap()>
 					<div class="fixed inset-0 bg-opacity-50 z-60 bg-black/25">
-						<div class="fixed top-0 left-0 w-full h-full bg-white opacity-95 duration-300 translate-x-0 z-70 dark:bg-slate-950 dark:opacity-[0.98]">
+						<div class="fixed top-0 left-0 w-full h-full bg-white opacity-95 duration-300 translate-x-0 z-70 dark:bg-slate-950 dark:opacity-98">
 							<nav class="flex overflow-y-auto flex-col items-start pt-2 pl-12 mt-8 w-full h-full text-left basis-0">
 								<For
 									each=move || HEADER_NAV_LINKS.iter()
