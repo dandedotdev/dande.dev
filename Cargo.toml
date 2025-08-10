@@ -77,8 +77,8 @@ browserquery = "defaults"
 end2end-cmd = "npx playwright test"
 end2end-dir = "end2end"
 env = "DEV"
-# FIXME: Setup `hash-files` for cache in production
-# hash-files = true
+# FIXME: Use `<HashedStylesheet>`, however, it doesn't support `prism.css` (dynamically imported CSS)
+hash-files = true
 lib-default-features = false
 lib-features = ["hydrate"]
 lib-package = "client"

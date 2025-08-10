@@ -8,7 +8,7 @@ pub mod types;
 pub mod utils;
 
 use leptos::prelude::*;
-use leptos_meta::{Link, Meta, MetaTags, Stylesheet, provide_meta_context};
+use leptos_meta::{HashedStylesheet, Link, Meta, MetaTags, provide_meta_context};
 use leptos_router::{
     SsrMode,
     components::{FlatRoutes, Route, Router},
@@ -35,7 +35,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<AutoReload options=options.clone() />
 				// https://github.com/leptos-rs/leptos/discussions/3039#discussioncomment-10783691
-				<HydrationScripts options />
+				<HydrationScripts options=options.clone() />
 				<MetaTags />
 				<Link
 					rel="apple-touch-icon"
@@ -58,7 +58,7 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 				<Link rel="shortcut icon" type_="image/x-icon" href="/favicons/favicon.ico" />
 				<Link rel="author" href=SITE_METADATA.github_url />
 				<Meta name="author" content=SITE_METADATA.author />
-				<Stylesheet id="leptos" href="/pkg/dande_dev.css" />
+				<HashedStylesheet id="leptos" options />
 				// Block parsing, set up default localstorage and initialize the theme
 				<script>
 					(function() {
