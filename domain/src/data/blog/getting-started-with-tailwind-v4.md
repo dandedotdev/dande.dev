@@ -2,7 +2,7 @@
 date: 2025-08-07 21:19:16
 description: 'Learn how to get started with Tailwind CSS v4, exploring its new features, improved syntax, and enhanced developer experience for modern web development.'
 draft: false
-last_modified: 2025-08-09 17:22:16
+last_modified: 2025-08-10 19:50:07
 tags: ['tailwind', 'web']
 title: 'Getting Started with Tailwind v4'
 ---
@@ -11,7 +11,7 @@ title: 'Getting Started with Tailwind v4'
 
 [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4) has been released for quite some time now, and recently I had the opportunity to work with [mayone](https://github.com/mayone) on migrating our utility-based CSS framework. Through this migration process, we've gained valuable insights and practical experience that I'd like to share with the community.
 
-The examples in this article use `tailwindcss 3.4.17` / `tailwindcss 4.0.11`.
+The examples in this article use `tailwindcss 3.4.17` / `tailwindcss 4.1.11`.
 
 ## Removal of `tailwind.config.js`
 
@@ -268,6 +268,8 @@ module.exports = {
 
 ### `plugins`
 
+Tailwind CSS plugins are extensions that add new utility classes.
+
 ```js:tailwind.config.mjs(Tailwind_v3)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -300,7 +302,7 @@ Tailwind v4 introduces several convenient utility functions that enhance the dev
 
 ### `--alpha()`
 
-```css:tailwind.css
+```css:tailwind.css(Tailwind_v4)
 .my-element {
   color: --alpha(var(--color-indigo-700) / 50%);
 }
@@ -314,7 +316,7 @@ Tailwind v4 introduces several convenient utility functions that enhance the dev
 
 ### `--spacing()`
 
-```css:tailwind.css
+```css:tailwind.css(Tailwind_v4)
 .my-element {
   padding: --spacing(2) --spacing(4);
 }
@@ -328,7 +330,7 @@ Tailwind v4 introduces several convenient utility functions that enhance the dev
 
 ### `theme()`
 
-```css:tailwind.css
+```css:tailwind.css(Tailwind_v4)
 .my-element {
   padding: theme(spacing.2) theme(spacing.4);
 }
@@ -345,20 +347,20 @@ Tailwind v4 introduces several convenient utility functions that enhance the dev
 
 In Tailwind v4, you can use casual values in your utilities. Tailwind v4 will automatically generate the corresponding CSS:
 
-```tsx:my-component.tsx(v3)
+```tsx:my-component.tsx(Tailwind_v3)
 const MyComponent = () => {
   return (
-    <div class="opacity-[0.98]">
+    <div class="opacity-[0.98] p-[18px]">
       {/* ... */}
     </div>
   );
 };
 ```
 
-```tsx:my-component.tsx(v4)
+```tsx:my-component.tsx(Tailwind_v4)
 const MyComponent = () => {
   return (
-    <div class="opacity-98">
+    <div class="opacity-98 p-4.5">
       {/* ... */}
     </div>
   );
@@ -397,6 +399,12 @@ const MyComponent = () => {
   );
 };
 ```
+
+## Wrapping Up
+
+Tailwind v4's January release initially caused some confusion in the community, but as the most popular styling solution in the front-end ecosystem, these issues will likely be resolved soon.
+
+Happy styling!
 
 ## Footnotes
 
