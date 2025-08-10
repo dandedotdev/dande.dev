@@ -3,12 +3,20 @@ use std::sync::OnceLock;
 use regex::Regex;
 
 static CODE_TITLE_REGEX: OnceLock<Regex> = OnceLock::new();
+static UNDERSCORE_IN_FILENAME_REGEX: OnceLock<Regex> = OnceLock::new();
 
 #[rustfmt::skip]
 fn get_code_title_regex() -> &'static Regex {
     CODE_TITLE_REGEX.get_or_init(|| {
-        Regex::new(r#"(<div class=(\\"|")relative(\\"|")><pre><code class=(\\"|")language-([^:]+):([^"\\]+)(\\"|")>)"#)
+        Regex::new(r#"(<div class=(\\"|")relative(\\"|")><pre><code class=(\\"|")language-([^:]+):([^"\\?#\s]+)(?:\(([^)]+)\))?(\\"|")>)"#)
             .unwrap()
+    })
+}
+
+#[rustfmt::skip]
+fn get_underscore_in_filename_and_parentheses_regex() -> &'static Regex {
+    UNDERSCORE_IN_FILENAME_REGEX.get_or_init(|| {
+        Regex::new(r"\(([^)]*)\)").unwrap()
     })
 }
 
@@ -18,11 +26,22 @@ pub fn add_gfm_code_title(html: &str) -> String {
     get_code_title_regex()
         .replace_all(html, |caps: &regex::Captures<'_>| {
             let language = &caps[5];
-            let filename = &caps[6];
+            let code_title = &caps[6];
             let quote_type = if caps[2].contains('\\') { "\\\"" } else { "\"" };
 
+            let formatted_title = if code_title.contains('(') {
+                let with_space = code_title.replace('(', " (");
+                get_underscore_in_filename_and_parentheses_regex()
+                    .replace_all(&with_space, |caps: &regex::Captures<'_>| {
+                        caps[0].replace('_', " ")
+                    })
+                    .to_string()
+            } else {
+                code_title.to_string()
+            };
+
             format!(
-                r#"<div class="remark-code-title">{filename}</div><div class={quote_type}relative{quote_type}><pre><code class={quote_type}language-{language}{quote_type}>"#
+                r#"<div class="remark-code-title">{formatted_title}</div><div class={quote_type}relative{quote_type}><pre><code class={quote_type}language-{language}{quote_type}>"#
             )
         })
         .to_string()
@@ -87,6 +106,14 @@ mod tests {
     fn test_no_filepath() {
         let input = r#"<div class="relative"><pre><code class="language-rust">fn main() {}</code></pre></div>"#;
         assert_eq!(add_gfm_code_title(input), input);
+    }
+
+    #[rustfmt::skip]
+    #[test]
+    fn test_with_filename_with_description() {
+        let input = r#"<div class="relative"><pre><code class="language-css:radix/red.css(ketchup_sauce)">/* CSS code */</code></pre></div>"#;
+        let expected = r#"<div class="remark-code-title">radix/red.css (ketchup sauce)</div><div class="relative"><pre><code class="language-css">/* CSS code */</code></pre></div>"#;
+        assert_eq!(add_gfm_code_title(input), expected);
     }
 
     #[rustfmt::skip]
