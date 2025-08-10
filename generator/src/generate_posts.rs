@@ -70,10 +70,12 @@ where
 
             let matter = Matter::<YAML>::new();
             let post_data = matter
-                .parse_with_struct::<PostFrontMatter>(&content)
+                .parse::<PostFrontMatter>(&content)
                 .expect("Failed to parse md frontmatter");
 
-            if post_data.data.draft {
+            let maybe_post_data = post_data.data.expect("Failed to parse frontmatter data");
+
+            if maybe_post_data.draft {
                 println!("Skipping draft post: {slug}");
                 return None;
             }
@@ -98,7 +100,7 @@ where
 
             Some(Post::new(
                 highlighted_html,
-                PostMetadata::new(post_data.data, slug),
+                PostMetadata::new(maybe_post_data, slug),
             ))
         })
         .collect();

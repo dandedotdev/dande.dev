@@ -45,6 +45,55 @@
 	background-color: color-mix(in oklab,var(--color-green-500)20%,transparent);
 }
 
+.footnote-definition {
+  /*
+    @apply my-4 flex items-center gap-3;
+  */
+  align-items: center;
+  display: flex;
+  gap: calc(var(--spacing)*3);
+  margin-block: calc(var(--spacing)*4);
+}
+
+.footnote-definition > p {
+  /*
+    @apply m-0 text-sm;
+  */
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.footnote-definition > .footnote-definition-label {
+  /*
+    @apply top-[0.05em] block min-w-4.5;
+  */
+  display: block ;
+  min-width: calc(var(--spacing)*4.5);
+  top: 0.05em;
+}
+
+.footnote-definition-label {
+  /*
+    @apply text-sm font-semibold;
+  */
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.footnote-reference > a {
+  /*
+    @apply no-underline;
+  */
+  text-decoration: none;
+}
+
+.footnote-reference > a:hover {
+  /*
+    @apply underline;
+  */
+  text-decoration: underline;
+}
+
 .highlight-line {
 	/*
 		@apply -mx-4 border-l-4 border-primary-500 bg-slate-700/50;
