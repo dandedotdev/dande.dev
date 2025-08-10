@@ -4,8 +4,16 @@ ignorePaths:
   ['.data', '.gitattributes', '.gitignore', '*.lock', '*-lock.yaml', 'prism.css', 'target']
 dictionaryDefinitions: []
 dictionaries: []
-words:
-  [
+words: [
+    # dev
+    'blocklist',
+    'noto',
+    'oklab',
+    'rslint',
+    'safelist',
+    'segoe',
+    'taplo',
+    # developers
     'akesson',
     'bram209',
     'carloskiki',
@@ -17,13 +25,12 @@ words:
     'kenji',
     'leohuynh',
     'makezu',
+    'mayone',
     'miyazawa',
     'niklas',
     'rhysd',
-    'rslint',
     'Synphonyte',
     'tamasfe',
-    'taplo',
     'timlrx',
     'typicode',
   ]
