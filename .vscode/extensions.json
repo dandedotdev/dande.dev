@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "fill-labs.dependi",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "kisstkondoros.vscode-gutter-preview",
+    "DavidAnson.vscode-markdownlint",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

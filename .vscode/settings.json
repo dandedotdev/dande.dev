@@ -1,5 +1,19 @@
 {
-	"files.associations": {
-		"wrangler.json": "jsonc"
-	}
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit",
+    "source.fixAll.prettier": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
+  },
+  "files.associations": {
+    "wrangler.json": "jsonc"
+  },
+  "json.schemaDownload.enable": false,
+  "terminal.integrated.suggest.enabled": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/index.*": "${dirname} (index)",
+    "**/layout.tsx": "${dirname} (layout)",
+    "**/page.tsx": "${dirname} (page)"
+  }
 }
