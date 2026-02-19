@@ -6,7 +6,6 @@
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
   },
-  "eslint.experimental.useFlatConfig": true,
   "files.associations": {
     "wrangler.json": "jsonc"
   },
