@@ -4,3 +4,55 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      timezone: "Asia/Taipei"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      framework:
+        patterns:
+          - "@types/react"
+          - "@types/react-dom"
+          - "babel-plugin-react-compiler"
+          - "eslint-config-next"
+          - "next"
+          - "react"
+          - "react-dom"
+      cloudflare-opennext:
+        patterns:
+          - "@opennextjs/cloudflare"
+          - "wrangler"
+      lint:
+        patterns:
+          - "@ianvs/prettier-plugin-sort-imports"
+          - "@typescript-eslint/*"
+          - "eslint*"
+          - "markdownlint-cli"
+          - "prettier*"
+        exclude-patterns:
+          # already in framework group
+          - "eslint-config-next"
+          # already in tailwind group
+          - "prettier-plugin-tailwindcss"
+      tailwind:
+        patterns:
+          - "@tailwindcss/*"
+          - "prettier-plugin-tailwindcss"
+          - "tailwindcss"
+      tooling:
+        patterns:
+          - "@types/node"
+          - "typescript"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      timezone: "Asia/Taipei"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(ci)"
